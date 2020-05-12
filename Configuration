@@ -1,0 +1,81 @@
+After installing the Git, set username and email in the config
+$ git config --global user.name "username"
+$ git config --global user.email "email"
+$ git config –list
+
+Adding a folder as a git repository
+
+	$ git init
+
+To add remote as an origin
+
+	$ git remote add origin http://url/proj.git
+
+Creating a new local branch
+
+	$ git branch <branch name>
+
+Switching to the required branch
+
+	$ git checkout <branch name>
+
+Creating a new branch and switching to it using one command
+
+	$ git checkout –b <branch name>
+
+Listing all the branches in your local
+
+	$ git branch
+
+Deleting a branch <Delete will fail if there are any unmerged files in this branch>
+
+	$ git branch –d <branch to be deleted>
+
+To delete a branch with checking for unmerged files
+
+	$ git branch –D <branch to be deleted>
+
+$ git status
+
+To add any changed files to staging area which is in local and ready for commit
+
+$ git add <file name>
+$ git add .  
+
+To remove any file from staging area after adding 
+
+	$ git reset <file name>
+$ git reset
+
+To discard changes in working directory<We cannot undo once changes are lost>
+
+	$ git checkout <file name>
+
+To commit the files which are in ready to commit status in the staging area (git commit only commit to your local repository and not yet pushed to remote GIT repository. Till you push, these files will be sitting in your local)
+
+$ git commit -m "message"
+
+To show all your commit log history
+
+$ git log
+$ git log --oneline
+
+Update the local repository from the remote before we push any of our changes using one of the below commands
+$ git pull origin master   --If remote is added as origin
+
+To push the committed files to the remote Git repository. After this, you can see the new files in www.github.com after refresh
+
+	$ git push
+
+To see the difference between local and remote repository with changes in every line of code in every file
+
+	$ git diff master origin/master
+
+To get the list of my remote repos on github
+
+	$ git remote -v
+
+To see the difference between the file in staging area (after “git add”) and committed file. This command shows file differences in a new window. For this, we need to setup “meld” tool.
+	$ git difftool HEAD
+To see the merge conflicts at the time of push
+	$ git mergetool
