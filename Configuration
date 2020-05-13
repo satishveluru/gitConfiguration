@@ -58,6 +58,32 @@ To see the difference between local and remote repository with changes in every 
 
 To get the list of my remote repos on github
 	$ git remote -v
+	
+	git rm log/\*.log  
+
+git rm \*~   -- remove all the files 
+git mv file_from file_to
+
+
+-- viewing 
+git log
+git log -p -2
+git log --stat
+git log --pretty=oneline
+
+git log --pretty=format:"%h - %an, %ar : %s"
+git log --pretty=format:"%h %s" --graph
+
+git log --since=2.weeks
+git log --pretty="%h - %s" --author=gitster --since="2008-10-01"
+
+
+#Undoing thing
+git commit --amend
+git reset HEAD CONTRIBUTING.md
+
+#Remote
+git remote show origin
 
 To see the difference between the file in staging area (after “git add”) and committed file. This command shows file differences in a new window. For this, we need to setup “meld” tool.
 	$ git difftool HEAD
